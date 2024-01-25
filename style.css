@@ -1,5 +1,51 @@
-.imagen-encabezado{
-    width: 250px;
+header{
+    background: orange;
     height: auto;
+    display: block;
+    width: auto
+    
+    
+}
+.imagen-encabezado{
+    width: auto;
+    height: 50px;
+    margin: 15px -13px;
+}
+
+main{
+    display: flex;
+    padding: 20px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logos-encabezado{
     margin: 20px -20px;
 }
+
+.logos-encabezado img{
+    background: green;
+    height: 85px;
+    width: auto;
+    margin-top: 1.5e,;
+    
+}
+
+.zona-analizador{
+    background: red;
+    width: 60%;
+}
+
+.zona-mensajes{
+    background: blue;
+    width: 30%;
+}
+
+.zona-analizador, .zona-mensajes{
+    height: 450px;
+    display: block;
+}
+
