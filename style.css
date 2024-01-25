@@ -38,6 +38,11 @@ main{
     background: red;
     width: 60%;
 }
+.texto-a-analizar{
+    width: 90%;
+    height: 70%;
+    padding: 5%;
+}
 
 .zona-mensajes{
     background: blue;
@@ -47,5 +52,10 @@ main{
 .zona-analizador, .zona-mensajes{
     height: 450px;
     display: block;
+    text-align: center;
+}
+
+.logo-lupa{
+    width:100%;
 }
 
