@@ -54,8 +54,21 @@ main{
 }
 
 .botones{
+    font-family: 'Inter', sans-serif;
     width: 12em;
     height: 3.7em;
+    border: 1px solid #0A3871;
+    border-radius: 16px;
+
+}
+
+.boton-tipo1{
+    background:#0A3871;
+    color:white;
+}
+
+.boton-tipo2{
+    background-color: #D8DFE8;
 }
 
 .zona-mensajes{
