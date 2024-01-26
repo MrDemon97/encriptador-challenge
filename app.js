@@ -1,5 +1,6 @@
 let textIngresado;
 let portapapeles = "";
+
 /* creamos una constante en la cual almacenamos una expresión regular 
 NOTA : / Delimita el inicio y final de la expresión
        ^ Inica el inicio de la línea
@@ -12,8 +13,8 @@ NOTA : / Delimita el inicio y final de la expresión
         */
 const textoValido = /^[a-z\s]+$/;
 
-
 let botonCopiar = document.querySelector(".copiar");
+let imagenLupa = document.querySelector(".logo-lupa");
 
 
 textIngresado = "";
@@ -42,6 +43,7 @@ function sistemaEncriptador(opcion) {
         }
     } else {
         textIngresado = document.querySelector(".texto-a-analizar").value;
+        return;
     }
 }
 
@@ -77,6 +79,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         mostradorNoticia.innerHTML = resultadoBusqueda;
         mostradorMensaje.innerHTML = mensaje;
 
+
     } else {
         botonCopiar.disabled = false;
         mostradorNoticia.innerHTML = "Mensaje encontrado";
@@ -84,6 +87,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         portapapeles = mensaje;
         console.log(portapapeles);
     }
+ return;
 }
 
 function encriptador(encriptado) {
@@ -120,4 +124,12 @@ function desencriptador(mensajeSecreto) {
 
 function copiarEnPortapapeles(){
     navigator.clipboard.writeText(portapapeles);
+    return;
 }
+
+function ocularImagen(){
+
+}
+ function mostrarImagen(params) {
+    
+ }

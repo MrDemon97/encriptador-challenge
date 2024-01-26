@@ -46,6 +46,10 @@ main{
     width: 90%;
     height: 70%;
     padding: 5%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.9em;
+    color: #0A3871;
+
 }
 
 .zona-mensajes{
