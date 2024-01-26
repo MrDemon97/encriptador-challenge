@@ -57,8 +57,10 @@ main{
 
 .zona-analizador, .zona-mensajes{
     height: 450px;
-    display: block;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .logo-lupa{
