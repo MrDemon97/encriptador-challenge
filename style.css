@@ -42,21 +42,38 @@ main{
     background: red;
     width: 60%;
 }
-.texto-a-analizar{
-    width: 90%;
-    height: 70%;
-    padding: 5%;
+.texto-a-analizar{    
+    width: 70%;
+    height: 9.5em;
+    padding: 4%;
+    font-size: 1.8em;
+    font-weight: bold;
     font-family: 'Inter', sans-serif;
-    font-size: 1.9em;
     color: #0A3871;
 
 }
 
+.botones{
+    width: 12em;
+    height: 3.7em;
+}
+
 .zona-mensajes{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
     border-radius: 32px;
     background: white;
     width: 30%;
     color:#343A40;
+}
+
+.zona-mensajes .noticia{
+    font-size: 1.3em;
+
+}
+
+.zona-mensajes .mensaje-optenido{
+    font-size: 1em;
 }
 
 .zona-analizador, .zona-mensajes{
@@ -67,7 +84,8 @@ main{
     flex-direction: column;
 }
 
+
 .logo-lupa{
-    width:100%;
+    width:80%;
 }
 

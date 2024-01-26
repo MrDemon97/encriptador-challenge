@@ -76,8 +76,8 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
        
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
         botonCopiar.disabled = true;
-        mostradorNoticia.innerHTML = resultadoBusqueda;
-        mostradorMensaje.innerHTML = mensaje;
+        mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
+        mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
 
 
     } else {
