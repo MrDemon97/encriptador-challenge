@@ -1,5 +1,8 @@
+html{
+    background:#EFF1FA;
+}
+
 header{
-    background: orange;
     height: auto;
     display: block;
     width: auto
@@ -8,13 +11,13 @@ header{
 }
 .imagen-encabezado{
     width: auto;
-    height: 50px;
+    height: 46px;
     margin: 15px -13px;
 }
 
 main{
     display: flex;
-    padding: 20px;
+    padding: 10px;
     width: auto;
     align-items: center;
     justify-content: center;
@@ -35,7 +38,8 @@ main{
 }
 
 .zona-analizador{
-    background: purple;
+    background: #EFF1FA;
+    background: red;
     width: 60%;
 }
 .texto-a-analizar{
@@ -45,9 +49,10 @@ main{
 }
 
 .zona-mensajes{
-    background: blue;
+    border-radius: 32px;
+    background: white;
     width: 30%;
-    color: aliceblue;
+    color:#343A40;
 }
 
 .zona-analizador, .zona-mensajes{

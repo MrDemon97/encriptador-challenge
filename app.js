@@ -17,6 +17,8 @@ let botonCopiar = document.querySelector(".copiar");
 
 
 textIngresado = "";
+
+//Desabilitamos boton copiar
 botonCopiar.disabled = true;
 
 function sistemaEncriptador(opcion) {
