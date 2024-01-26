@@ -35,7 +35,7 @@ main{
 }
 
 .zona-analizador{
-    background: red;
+    background: purple;
     width: 60%;
 }
 .texto-a-analizar{
@@ -47,6 +47,7 @@ main{
 .zona-mensajes{
     background: blue;
     width: 30%;
+    color: aliceblue;
 }
 
 .zona-analizador, .zona-mensajes{

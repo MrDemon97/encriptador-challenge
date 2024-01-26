@@ -1,5 +1,4 @@
 let textIngresado;
-textIngresado = "";
 let portapapeles = "";
 /* creamos una constante en la cual almacenamos una expresión regular 
 NOTA : / Delimita el inicio y final de la expresión
@@ -12,6 +11,13 @@ NOTA : / Delimita el inicio y final de la expresión
        \s carácter que le dice al pc que es un espacion en blanco
         */
 const textoValido = /^[a-z\s]+$/;
+
+
+let botonCopiar = document.querySelector(".copiar");
+
+
+textIngresado = "";
+botonCopiar.disabled = true;
 
 function sistemaEncriptador(opcion) {
     //selecciona el elemento textArea, de donde sacaremos el valor;
@@ -60,14 +66,17 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
     let mostradorMensaje = document.querySelector(".mensaje-optenido");
 
     if (resultadoBusqueda === "error") {
+        botonCopiar.disabled = true;
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
        
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
+        botonCopiar.disabled = true;
         mostradorNoticia.innerHTML = resultadoBusqueda;
         mostradorMensaje.innerHTML = mensaje;
 
     } else {
+        botonCopiar.disabled = false;
         mostradorNoticia.innerHTML = "Mensaje encontrado";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
@@ -107,6 +116,6 @@ function desencriptador(mensajeSecreto) {
     return mensajeSecreto;
 }
 
-function copiaHaciaPortapapeles(){
-    
+function copiarEnPortapapeles(){
+    navigator.clipboard.writeText(portapapeles);
 }
