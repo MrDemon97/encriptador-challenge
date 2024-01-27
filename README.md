@@ -13,7 +13,7 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 
 
-El mensaje encontrado fué:
+El mensaje encontrado fué (sin !):
 felicidades por enfrentar este desafio y haberlo concluido con exito
 
 
