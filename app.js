@@ -11,10 +11,11 @@ NOTA : / Delimita el inicio y final de la expresión
        a-z carácteres minúsculos del alfabeto
        \s carácter que le dice al pc que es un espacion en blanco
         */
-const textoValido = /^[a-z\s]+$/;
+const textoValido = /^[a-z ñ\s]+$/;
 
 let botonCopiar = document.querySelector(".copiar");
 let imagenLupa = document.querySelector(".logo-lupa");
+
 
 
 textIngresado = "";
@@ -132,7 +133,10 @@ function interruptorBotonCopiar(){
 
 }
 
-function ocularImagen(){
+function interruptorimagen(comado){
+    //si recibe true
+    
+    imagenLupa
 
 }
  function mostrarImagen(params) {
