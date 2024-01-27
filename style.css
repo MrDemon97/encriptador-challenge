@@ -3,26 +3,25 @@ html{
 }
 
 header{
+    margin-bottom: -45px;
     height: auto;
     display: block;
-    width: auto
-    
-    
-}
-.imagen-encabezado{
-    width: auto;
-    height: 46px;
-    margin: 15px -13px;
+    width: auto     
 }
 
 main{
     display: flex;
-    padding: 10px;
+    padding: 50px;
     width: auto;
     align-items: center;
     justify-content: center;
 }
 
+.imagen-encabezado{
+    width: auto;
+    height: 46px;
+    margin: 15px -13px;
+}
 
 
 .logos-encabezado{
@@ -30,16 +29,12 @@ main{
 }
 
 .logos-encabezado img{
-    background: green;
     height: 85px;
-    width: auto;
-    margin-top: 1.5e,;
-    
+    width: auto;    
 }
 
 .zona-analizador{
     background: #EFF1FA;
-    background: red;
     width: 60%;
 }
 .texto-a-analizar{    
@@ -53,7 +48,15 @@ main{
 
 }
 
-.botones{
+.instrucciones{
+    font-family: 'Inter', sans-serif;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: #343A40;
+    font-weight: bold;
+}
+
+.boton-tipo1, .boton-tipo2{
     font-family: 'Inter', sans-serif;
     width: 12em;
     height: 3.7em;
@@ -68,25 +71,32 @@ main{
 }
 
 .boton-tipo2{
-    background-color: #D8DFE8;
+    background: #D8DFE8;
+    color: #0A3871;
 }
 
+
 .zona-mensajes{
+    display: inline-flex;
+    align-items: center;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     border-radius: 32px;
     background: white;
-    width: 30%;
+    width: 25%;
     color:#343A40;
 }
 
 .zona-mensajes .noticia{
     font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 20px;
 
 }
 
 .zona-mensajes .mensaje-optenido{
     font-size: 1em;
+    margin-bottom: 10px;
 }
 
 .zona-analizador, .zona-mensajes{
@@ -102,3 +112,97 @@ main{
     width:80%;
 }
 
+@media screen and (max-width:770px){
+    header{
+        text-align: center;
+        margin-bottom: -30px;
+    }
+    body{
+        width: auto;
+    }
+    main{
+        display: flex;
+        padding: 30px;
+        width: 100%;
+        flex-direction: column;        
+    }
+    
+    .zona-analizador, .zona-mensajes{
+        width: 100%;    
+    }
+
+    .zona-analizador{
+        height: 650px;
+    }
+    .texto-a-analizar{
+        height: 13.5em;
+    }
+    .zona-botones{
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px 0 5px;
+    }
+    .boton-tipo1, .boton-tipo2 {
+        height: 60px;
+        width: 42%;
+        margin-top: 8px;
+
+    }
+
+    .instrucciones{
+        font-family: 'Inter', sans-serif;
+        margin-top: 12px;
+    }
+
+    .boton-tipo1, .boton-tipo2, .instrucciones{
+        font-size: 26px;
+    }
+
+    .zona-mensajes{
+        display: inline-flex;
+        align-items: centr;
+        margin-top: 25px; 
+        justify-content: center;
+        margin: 26px 0 0 0;
+        width: 90%;
+        height: 16em;
+        background-color: #343A40;
+        color: #D8DFE8;
+    }
+
+    .zona-mensajes .noticia{
+        font-size: 1.8em;
+        margin-bottom: 4px;    
+    }
+    
+    .zona-mensajes .mensaje-optenido{
+        font-size: 1.5em;
+        font-weight: normal;
+    }
+
+    .logo-lupa{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:480px){
+    
+    .zona-botones{
+        display:inline-flex;
+        flex-direction: column;        
+    }
+
+    .boton-tipo1, .boton-tipo2, .instrucciones{
+        font-size: 16px;
+    }
+
+    .zona-mensajes .noticia{
+        font-size: 1.3em;    
+    }
+    
+    .zona-mensajes .mensaje-optenido{
+        font-size: 1.2em;
+    }
+}

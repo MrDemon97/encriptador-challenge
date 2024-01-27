@@ -19,28 +19,18 @@ let imagenLupa = document.querySelector(".logo-lupa");
 
 textIngresado = "";
 
-//Desabilitamos boton copiar
-botonCopiar.disabled = true;
-
 function sistemaEncriptador(opcion) {
     //selecciona el elemento textArea, de donde sacaremos el valor;
     textIngresado = document.querySelector(".texto-a-analizar").value;
     //verificamos si lo que ingresó el usuario
     let mensajeClave = textIngresado;
     //validamos si el mensaje fue válido;
-    if (validarTexto() === true) {
+    if (validarTexto() === true) { 
         if (opcion === 1) {
-            mensajeClave = encriptador(mensajeClave);
-            mostrarResultado("", mensajeClave);
-        } else if (opcion === 2) {
-            let text = mensajeClave;
-            mensajeClave = desencriptador(mensajeClave);
-            if (text === mensajeClave) {
-                mostrarResultado("Mensaje no encontrado", "");
-            } else {
-                mostrarResultado("", mensajeClave);
-            }
-        }
+            validarBusqueda(mensajeClave,encriptador(mensajeClave));
+           } else if (opcion === 2) {      
+            validarBusqueda(mensajeClave,desencriptador(mensajeClave));      
+           }
     } else {
         textIngresado = document.querySelector(".texto-a-analizar").value;
         return;
@@ -70,18 +60,18 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
     let mostradorMensaje = document.querySelector(".mensaje-optenido");
 
     if (resultadoBusqueda === "error") {
-        botonCopiar.disabled = true;
+        //botonCopiar.disabled = true;
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
        
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
-        botonCopiar.disabled = true;
+        //botonCopiar.disabled = true;
         mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
 
 
     } else {
-        botonCopiar.disabled = false;
+        //botonCopiar.disabled = false;
         mostradorNoticia.innerHTML = "Mensaje encontrado";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
@@ -122,9 +112,24 @@ function desencriptador(mensajeSecreto) {
     return mensajeSecreto;
 }
 
+function validarBusqueda(textoInicial,TextoFinal){
+    if (textoInicial === TextoFinal) {
+        mostrarResultado("Mensaje no encontrado", "");
+     } else {
+        mostrarResultado("", TextoFinal);
+    }
+    return;
+} 
+
+
+
 function copiarEnPortapapeles(){
     navigator.clipboard.writeText(portapapeles);
     return;
+}
+
+function interruptorBotonCopiar(){
+
 }
 
 function ocularImagen(){
