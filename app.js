@@ -21,8 +21,7 @@ let imagenLupa = document.querySelector(".logo-lupa");
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
 function sistemaEncriptador(opcion) {
-    
-    //selecciona el elemento textArea, de donde sacaremos el valor;
+
     textIngresado = document.querySelector(".texto-a-analizar").value;
     
     // guardamos el tecto ingresado por el usuario en una variable
@@ -81,35 +80,54 @@ function validarTexto() {
 }
 
 function validarBusqueda(textoInicial,TextoFinal){
-    // Si la clave
+    // La funcion validar compara la cadena inicial con la cadena desencriptada/encriptada
     if (textoInicial === TextoFinal) {
+
+   /*  si son iguales entonces se muestra un mensensaje de mensaje  se llama a la función mostrar resultado
+    con mensaje no encontrado como parametro iniciasl */
         mostrarResultado("Mensaje no encontrado", "");
      } else {
+
+        //Si no son iguales enviamos se envia una cadena vacía y el resultado de desencriptar/encriptar
         mostrarResultado("", TextoFinal);
     }
     return;
 } 
 
 function mostrarResultado(resultadoBusqueda, mensaje) {
-    //Seleccionamos los elementos que se encargan de mostrar mensajes.
+    //Esta funcion muestra resultados en el area de mensaje
 
+    //Seleccionamos los elementos que se encargan de mostrar mensajes.
     let mostradorNoticia = document.querySelector(".noticia");
     let mostradorMensaje = document.querySelector(".mensaje-optenido");
 
+    //Si el primer parametro de la funcion es error muestra error y el mensaje que viene como segundo parámetro
     if (resultadoBusqueda === "error") {
+
+        //En interruptior de la imagen está apagado, no!
         interruptorimagen(false);
+        
+        //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
        
+        // si el parametro de la función fue mensaje no encontrado
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
+        
+        //En interruptior de la imagen está apagado, no!
         interruptorimagen(false);
+
+        //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
 
 
     } else {
+
+        //El interruptor de la imagen está encendido? si!
         interruptorimagen(true);
-        //botonCopiar.disabled = false;
+        
+        //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "Mensaje encontrado";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
@@ -150,10 +168,11 @@ function desencriptador(mensajeSecreto) {
     return mensajeSecreto;
 }
 
-
+//genera un 
 
 
 function copiarEnPortapapeles(){
+    // Copia lo que que hay en el cuadro de reaultados.
     navigator.clipboard.writeText(portapapeles);
     return;
 }
@@ -163,11 +182,18 @@ function copiarEnPortapapeles(){
 function interruptorimagen(comado){
     //si recibe true
     // hacemos uso de window.innerWidth que nos dá el ancho actual de la pantalla
+
+    // si el tamaño de pantall supera los 770 
     if(window.innerWidth > 770){
-        if(comado == true){
+
+        //y la orden será apagar la imagen
+        if(comado === true){
+
+            //apagamos la imagne
             imagenLupa.style.display = 'none'
           
-        }else{    
+        }else{
+            //sino mostramos la imagen
             imagenLupa.style.display = 'flex';
             
         }      
