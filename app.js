@@ -1,4 +1,4 @@
-let textIngresado;
+let textIngresado = "";
 let portapapeles = "";
 
 /* creamos una constante en la cual almacenamos una expresión regular 
@@ -13,46 +13,82 @@ NOTA : / Delimita el inicio y final de la expresión
         */
 const textoValido = /^[a-z ñ\s]+$/;
 
-let botonCopiar = document.querySelector(".copiar");
+//Selectores de elementos HTM
 let imagenLupa = document.querySelector(".logo-lupa");
 
 
 
-textIngresado = "";
-
+/* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
+recibe como parametro la eleccion del usuario */
 function sistemaEncriptador(opcion) {
+    
     //selecciona el elemento textArea, de donde sacaremos el valor;
     textIngresado = document.querySelector(".texto-a-analizar").value;
-    //verificamos si lo que ingresó el usuario
+    
+    // guardamos el tecto ingresado por el usuario en una variable
     let mensajeClave = textIngresado;
-    //validamos si el mensaje fue válido;
-    if (validarTexto() === true) { 
+
+/*  validamos si el mensaje fue válido medainte la funcion validar texto, que retornará true si es valido;
+    Con el resultado de la validación  hacemos un if para saber cuál acción realizar */
+    if (validarTexto() === true) {
+
+       /*  Si el resultado de la comparación es true ejecutaremos la siguiente comparación en la que usaremos la opcion del usuario*/
+       // si el usuario elije  encriptar 
         if (opcion === 1) {
+            
+            // se llama a la funcion encriptado con el mensaje clave dentro de funcion validar busqueda.
+            // llamamos a la funcion validar busqueda pasando como parametros el mensaje encriptado y el mensaje desencriptado 
             validarBusqueda(mensajeClave,encriptador(mensajeClave));
-           } else if (opcion === 2) {      
+
+            // Como al pulsar el boton desencriptar pasamos 2  como parámetro a la función sistemaEncriptador, se ejecuta la encriptar
+           } else{
+            
+            // se llama a la funcion encriptado con el mensaje clave dentro de funcion validar busqueda.
+            // llamamos a la funcion validar busqueda pasando como parametros el mensaje encriptado y el mensaje desencriptado 
             validarBusqueda(mensajeClave,desencriptador(mensajeClave));      
            }
     } else {
+        //Si el texto ingresado no es valido, se optiene el valor del textarea
         textIngresado = document.querySelector(".texto-a-analizar").value;
         return;
     }
 }
 
 function validarTexto() {
+    //Si el usaurio no ingreso nada se muestra mensaje de error
     if (textIngresado === "") {
         mostrarResultado("error", "No ha ingresado ningun tipo de texto");
+        
+        //es valido? no
         return false;
 
-        //usaremos la funcion test() para comprobar si todo está en minúsculas y sin acentos
+        /*Si el usuario si ingreso algo entoces  llamamos ala funcion test() para comprobar si todo está en minúsculas y 
+        sin acentos, haciendo la comparacion con la expresion regular declarada arriba*/
+
+        /* Si el resulatado al comparar concide con la expresion regular (si todas son minusculas devuelve true, sino devuelve false), por tanto
+        al no coincidir retorna false, pero con ! negamos y convertimos en true para que se pueda ejecutar if */
+        
     } else if (!textoValido.test(textIngresado)) {
-        mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas");
+        //como sabemos que no es lo que queemos mostramos este mensaje
+        mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas y sin acentos");
         return false;
+
         //alert("!Recuerda¡ Sólo letras minúsculas");
-    } else {
-        //
-        return true;
-    }
+        } else {
+            //si se ejecuta esta linea quiere decir que el mensaje cumple los criterios por tanto damos la comparacion como pasada
+            return true;
+        }
 }
+
+function validarBusqueda(textoInicial,TextoFinal){
+    // Si la clave
+    if (textoInicial === TextoFinal) {
+        mostrarResultado("Mensaje no encontrado", "");
+     } else {
+        mostrarResultado("", TextoFinal);
+    }
+    return;
+} 
 
 function mostrarResultado(resultadoBusqueda, mensaje) {
     //Seleccionamos los elementos que se encargan de mostrar mensajes.
@@ -61,22 +97,23 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
     let mostradorMensaje = document.querySelector(".mensaje-optenido");
 
     if (resultadoBusqueda === "error") {
-        //botonCopiar.disabled = true;
+        interruptorimagen(false);
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
        
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
-        //botonCopiar.disabled = true;
+        interruptorimagen(false);
         mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
 
 
     } else {
+        interruptorimagen(true);
         //botonCopiar.disabled = false;
         mostradorNoticia.innerHTML = "Mensaje encontrado";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
-        console.log(portapapeles);
+        
     }
  return;
 }
@@ -113,14 +150,6 @@ function desencriptador(mensajeSecreto) {
     return mensajeSecreto;
 }
 
-function validarBusqueda(textoInicial,TextoFinal){
-    if (textoInicial === TextoFinal) {
-        mostrarResultado("Mensaje no encontrado", "");
-     } else {
-        mostrarResultado("", TextoFinal);
-    }
-    return;
-} 
 
 
 
@@ -129,16 +158,18 @@ function copiarEnPortapapeles(){
     return;
 }
 
-function interruptorBotonCopiar(){
 
-}
 
 function interruptorimagen(comado){
     //si recibe true
-    
-    imagenLupa
-
-}
- function mostrarImagen(params) {
-    
- }
+    // hacemos uso de window.innerWidth que nos dá el ancho actual de la pantalla
+    if(window.innerWidth > 770){
+        if(comado == true){
+            imagenLupa.style.display = 'none'
+          
+        }else{    
+            imagenLupa.style.display = 'flex';
+            
+        }      
+    }
+}    

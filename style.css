@@ -51,7 +51,6 @@ main{
 }
 
 .instrucciones{
-    margin-left: 54px;
     font-family: 'Inter', sans-serif;
     margin-top: 12px;
     margin-bottom: 10px;
@@ -110,6 +109,9 @@ main{
 .zona-mensajes .mensaje-optenido{
     font-size: 1em;
     margin-bottom: 10px;
+    word-wrap: break-word;
+    width: 96%; 
+    padding: 2%;
 }
 
 .zona-analizador, .zona-mensajes{
@@ -126,6 +128,9 @@ main{
 }
 
 @media screen and (max-width:770px){
+    html .logo-lupa{
+        display: none;
+    }
     header{
         text-align: center;
         margin-bottom: -30px;
