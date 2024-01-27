@@ -9,6 +9,17 @@ header{
     width: auto     
 }
 
+footer{
+    width: auto;
+    padding: 1em;
+    height: 3em;
+    display: flex;
+    background: #EFF1FA;
+    justify-content: center; 
+    font-family: 'Inter', sans-serif;
+    color: #0A3871;
+}
+
 main{
     display: flex;
     padding: 50px;
@@ -37,6 +48,7 @@ main{
     background: #EFF1FA;
     width: 60%;
 }
+
 .texto-a-analizar{    
     background: #EFF1FA;
     border: none;
@@ -87,7 +99,6 @@ main{
     color: #0A3871;
 }
 
-
 .zona-mensajes{
     display: inline-flex;
     align-items: center;
@@ -126,6 +137,8 @@ main{
 .logo-lupa{
     width:80%;
 }
+
+/* ESTILOS PARA TABLETAS */
 
 @media screen and (max-width:770px){
     html .logo-lupa{
@@ -203,6 +216,8 @@ main{
     }
 
 }
+
+/* ESTILOS PARA CELULARES */
 
 @media screen and (max-width:480px){
     
