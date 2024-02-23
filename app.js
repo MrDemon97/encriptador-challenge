@@ -16,7 +16,6 @@ const textoValido = /^[a-z ñ\s]+$/;
 //Selectores de elementos HTM
 let imagenLupa = document.querySelector(".logo-lupa");
 
-
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
 function sistemaEncriptador(opcion) {
@@ -189,7 +188,7 @@ function interruptorimagen(comado){
         //y la orden será apagar la imagen
         if(comado === true){
 
-            //apagamos la imagne
+            //apagamos la imagen
             imagenLupa.style.display = 'none'
           
         }else{

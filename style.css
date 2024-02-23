@@ -76,6 +76,7 @@ main{
     font-family: 'Inter', sans-serif;
     width: 12em;
     height: 3.7em;
+    min-height: 3.7em;
     border: 1px solid #0A3871;
     border-radius: 16px;
     margin: 0 0.3em;
@@ -129,6 +130,7 @@ main{
     width: 96%; 
     padding: 2%;
     overflow: auto;
+    height: 85%;
 }
 
 .zona-analizador, .zona-mensajes{
@@ -141,6 +143,7 @@ main{
 
 
 .logo-lupa{
+    padding-top: 4em;
     width:80%;
 }
 
