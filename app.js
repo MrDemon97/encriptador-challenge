@@ -15,13 +15,13 @@ const textoValido = /^[a-z ñ\s]+$/;
 
 //Selectores de elementos HTM
 let imagenLupa = document.querySelector(".logo-lupa");
-
+let miBoton = document.getElementById('copiar');
 
 
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
 function sistemaEncriptador(opcion) {
-
+  
     textIngresado = document.querySelector(".texto-a-analizar").value;
     
     // guardamos el tecto ingresado por el usuario en una variable
@@ -157,7 +157,7 @@ function desencriptador(mensajeSecreto) {
           cadena con una, algunas, o todas las coincidencias
           de el mensaje a analizar pasamos como parametro una 
           expresion  regular /-exprecion-/ y la bandera g que indica 
-          global, es decir que no se se detiene al primer resultado 
+          global, es decir que no se se detiene al primer resultado, 
           el texto se debe encriptar en orden e i a o u para evitar errores*/
     mensajeSecreto = mensajeSecreto
         .replace(/enter/g, "e")
@@ -174,6 +174,7 @@ function desencriptador(mensajeSecreto) {
 function copiarEnPortapapeles(){
     // Copia lo que que hay en el cuadro de reaultados.
     navigator.clipboard.writeText(portapapeles);
+    alert("Texto copiado!");
     return;
 }
 
@@ -199,3 +200,4 @@ function interruptorimagen(comado){
         }      
     }
 }    
+
