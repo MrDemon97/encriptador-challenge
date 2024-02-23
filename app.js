@@ -15,7 +15,6 @@ const textoValido = /^[a-z ñ\s]+$/;
 
 //Selectores de elementos HTM
 let imagenLupa = document.querySelector(".logo-lupa");
-let miBoton = document.getElementById('copiar');
 
 
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
