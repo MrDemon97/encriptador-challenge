@@ -102,9 +102,6 @@ main{
     color: #0A3871;
 }
 
-.copiar{
-    
-}
 
 .zona-mensajes{
     display: inline-flex;
@@ -131,8 +128,8 @@ main{
     word-wrap: break-word;
     width: 96%; 
     padding: 2%;
+    overflow: auto;
 }
-
 
 .zona-analizador, .zona-mensajes{
     height: 450px;
@@ -179,15 +176,18 @@ main{
     .zona-analizador{
         height: 650px;
     }
+
     .texto-a-analizar{
         height: 13.5em;
     }
+    
     .zona-botones{
         display:inline-flex;
         justify-content: center;
         align-items: center;
         margin: 0 5px 0 5px;
     }
+
     .boton-tipo1, .boton-tipo2 {
         height: 60px;
         width: 42%;
