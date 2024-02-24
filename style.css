@@ -10,7 +10,7 @@ header{
 }
 
 footer{
-    width: auto;
+    width: 100%;
     padding: 1em;
     height: 3em;
     display: flex;
@@ -50,12 +50,16 @@ main{
     background: #EFF1FA;
     width: 60%;
 }
+#contenedor-entrada{
+    height: 100%;
+
+}
 
 .texto-a-analizar{    
     background: #EFF1FA;
     border: none;
     width: 70%;
-    height: 9.5em;
+    height: 10.9em;
     padding: 4%;
     font-size: 1.8em;
     font-weight: bold;
@@ -144,6 +148,7 @@ main{
 
 .logo-lupa{
     padding-top: 4em;
+    max-width: 170px;
     width:80%;
 }
 
@@ -177,7 +182,7 @@ main{
     }
 
     .zona-analizador{
-        height: 650px;
+        height: 100%;
     }
 
     .texto-a-analizar{
