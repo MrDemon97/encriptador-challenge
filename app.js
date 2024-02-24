@@ -51,6 +51,7 @@ function sistemaEncriptador(opcion) {
            }
     } else {
         //Si el texto ingresado no es valido, se optiene el valor del textarea
+        algoQueCopiar=false
         textIngresado = document.querySelector(".texto-a-analizar").value;
         return;
     }
@@ -59,6 +60,7 @@ function sistemaEncriptador(opcion) {
 function validarTexto() {
     //Si el usaurio no ingreso nada se muestra mensaje de error
     if (textIngresado === "") {
+        algoQueCopiar=false;
         mostrarResultado("error", "No ha ingresado ningun tipo de texto");
         
         //es valido? no
@@ -72,6 +74,7 @@ function validarTexto() {
         
     } else if (!textoValido.test(textIngresado)) {
         //como sabemos que no es lo que queemos mostramos este mensaje
+        botonCopiar=false;
         mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas y sin acentos");
         return false;
 
@@ -88,13 +91,15 @@ function validarBusqueda(textoInicial,TextoFinal){
 
    /*  si son iguales entonces se muestra un mensensaje de mensaje  se llama a la función mostrar resultado
     con mensaje no encontrado como parametro iniciasl */
-        mostrarResultado("Mensaje no encontrado", "");
         algoQueCopiar=false;
+        mostrarResultado("Mensaje no encontrado", "");
+        
      } else {
 
         //Si no son iguales enviamos se envia una cadena vacía y el resultado de desencriptar/encriptar
-        mostrarResultado("", TextoFinal);
         algoQueCopiar=true;
+        mostrarResultado("", TextoFinal);
+        
     }
     return;
 } 
@@ -113,20 +118,21 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(false);
         
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
+        botonCopiar=false;
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
-        botonCopiar=false;
+        
        
         // si el parametro de la función fue mensaje no encontrado
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
         
         //En interruptior de la imagen está apagado, no!
         interruptorimagen(false);
-
+        botonCopiar=false;
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
-        botonCopiar=false;
+       
 
 
     } else {
@@ -135,6 +141,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(true);
         
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
+        botonCopiar=true;
         mostradorNoticia.innerHTML = "¡Mensaje obtenido!";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
@@ -175,11 +182,6 @@ function desencriptador(mensajeSecreto) {
     return mensajeSecreto;
 }
 
-//genera un 
-
-function validarCopia(){
-
-}
 
 function copiarEnPortapapeles(){
     // Copia lo que que hay en el cuadro de reaultados.
