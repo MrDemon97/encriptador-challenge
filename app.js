@@ -19,7 +19,7 @@ let imagenLupa = document.querySelector(".logo-lupa");
 let interruptorBoton =  document.getElementById("copiar");
 
 //Iniciamos el boton con el boton copiar  desactivado
-algoQueCopiar=false;
+algoQueCopiar=false; //deshabilitamos boton copiar
 
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
@@ -51,7 +51,7 @@ function sistemaEncriptador(opcion) {
            }
     } else {
         //Si el texto ingresado no es valido, se optiene el valor del textarea
-        algoQueCopiar=false
+        algoQueCopiar=false //deshabilitamos boton copiar
         textIngresado = document.querySelector(".texto-a-analizar").value;
         return;
     }
@@ -60,7 +60,7 @@ function sistemaEncriptador(opcion) {
 function validarTexto() {
     //Si el usaurio no ingreso nada se muestra mensaje de error
     if (textIngresado === "") {
-        algoQueCopiar=false;
+        algoQueCopiar=false;//deshabilitamos boton copiar
         mostrarResultado("error", "No ha ingresado ningun tipo de texto.");
         
         //es valido? no
@@ -73,8 +73,8 @@ function validarTexto() {
         al no coincidir retorna false, pero con ! negamos y convertimos en true para que se pueda ejecutar if */
         
     } else if (!textoValido.test(textIngresado)) {
+        algoQueCopiar=false; //deshabilitamos boton copiar
         //como sabemos que no es lo que queemos mostramos este mensaje
-        botonCopiar=false;
         mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas y sin acentos.");
         return false;
 
@@ -91,13 +91,13 @@ function validarBusqueda(textoInicial,TextoFinal){
 
    /*  si son iguales entonces se muestra un mensensaje de mensaje  se llama a la función mostrar resultado
     con mensaje no encontrado como parametro iniciasl */
-        algoQueCopiar=false;
+        algoQueCopiar=false; //deshabilitamos boton copiar
         mostrarResultado("Mensaje no encontrado", "");
         
      } else {
 
         //Si no son iguales enviamos se envia una cadena vacía y el resultado de desencriptar/encriptar
-        algoQueCopiar=true;
+        algoQueCopiar=true; //habilitamos boton copiar
         mostrarResultado("", TextoFinal);
         
     }
@@ -118,7 +118,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(false);
         
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
-        botonCopiar=false;
+        botonCopiar=false; //deshabilitamos boton copair
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
         
@@ -128,7 +128,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         
         //En interruptior de la imagen está apagado, no!
         interruptorimagen(false);
-        botonCopiar=false;
+        botonCopiar=false; // deshabilitamos boton copiar
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "¡Ningún mensaje fue encontrado!";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar.";
@@ -141,7 +141,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(true);
         
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
-        botonCopiar=true;
+        botonCopiar=true; //habilitamos boton copiar
         mostradorNoticia.innerHTML = "¡Mensaje obtenido!";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
