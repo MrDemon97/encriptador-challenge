@@ -1,3 +1,7 @@
+body{
+    max-width: 1600px;
+    min-width: 274px;
+}
 html{
     background:#EFF1FA;
 }
@@ -58,8 +62,8 @@ main{
 .texto-a-analizar{    
     background: #EFF1FA;
     border: none;
-    width: 70%;
-    height: 10.9em;
+    width: 80%;
+    height: 11.6em;
     padding: 4%;
     font-size: 1.8em;
     font-weight: bold;
@@ -69,11 +73,19 @@ main{
 }
 
 .instrucciones{
+    display: flex;
+    align-items: center;
     font-family: 'Inter', sans-serif;
     margin-top: 12px;
     margin-bottom: 10px;
     color: #343A40;
     font-weight: bold;
+    justify-content: center;
+}
+
+#admiracion{
+    height: 1.5em;
+
 }
 
 .boton-tipo1, .boton-tipo2{
@@ -138,7 +150,7 @@ main{
 }
 
 .zona-analizador, .zona-mensajes{
-    height: 450px;
+    height: 30em;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -203,9 +215,14 @@ main{
 
     }
 
+    #admiracion{
+        height: 1.2em;
+    }
+
     .instrucciones{
         font-family: 'Inter', sans-serif;
         margin-top: 12px;
+        margin-left: 0;
     }
 
     .boton-tipo1, .boton-tipo2, .instrucciones{

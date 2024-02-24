@@ -126,10 +126,10 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(true);
         
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
-        mostradorNoticia.innerHTML = "Mensaje encontrado";
+        mostradorNoticia.innerHTML = "¡Mensaje obtenido!";
         mostradorMensaje.innerHTML = mensaje;
         portapapeles = mensaje;
-        
+
     }
  return;
 }
@@ -158,11 +158,11 @@ function desencriptador(mensajeSecreto) {
           global, es decir que no se se detiene al primer resultado, 
           el texto se debe encriptar en orden e i a o u para evitar errores*/
     mensajeSecreto = mensajeSecreto
-        .replace(/enter/g, "e")
-        .replace(/imes/g, "i")
-        .replace(/ai/g, "a")
-        .replace(/ober/g, "o")
-        .replace(/ufat/g, "u");
+         .replace(/ufat/g, "u")
+         .replace(/ober/g, "o")
+         .replace(/ai/g, "a")
+         .replace(/imes/g, "i")
+         .replace(/enter/g, "e");
     return mensajeSecreto;
 }
 
