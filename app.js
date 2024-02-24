@@ -1,5 +1,6 @@
 let textIngresado = "";
 let portapapeles = "";
+let algoQueCopiar;
 
 /* creamos una constante en la cual almacenamos una expresión regular 
 NOTA : / Delimita el inicio y final de la expresión
@@ -15,6 +16,10 @@ const textoValido = /^[a-z ñ\s]+$/;
 
 //Selectores de elementos HTM
 let imagenLupa = document.querySelector(".logo-lupa");
+let interruptorBoton =  document.getElementById("copiar");
+
+//Iniciamos el boton con el boton copiar  desactivado
+algoQueCopiar=false;
 
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
@@ -84,10 +89,12 @@ function validarBusqueda(textoInicial,TextoFinal){
    /*  si son iguales entonces se muestra un mensensaje de mensaje  se llama a la función mostrar resultado
     con mensaje no encontrado como parametro iniciasl */
         mostrarResultado("Mensaje no encontrado", "");
+        algoQueCopiar=false;
      } else {
 
         //Si no son iguales enviamos se envia una cadena vacía y el resultado de desencriptar/encriptar
         mostrarResultado("", TextoFinal);
+        algoQueCopiar=true;
     }
     return;
 } 
@@ -108,6 +115,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "¡ERROR!";
         mostradorMensaje.innerHTML = mensaje;
+        botonCopiar=false;
        
         // si el parametro de la función fue mensaje no encontrado
     } else if (resultadoBusqueda === "Mensaje no encontrado") {
@@ -118,6 +126,7 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
         mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
         mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
+        botonCopiar=false;
 
 
     } else {
@@ -168,11 +177,34 @@ function desencriptador(mensajeSecreto) {
 
 //genera un 
 
+function validarCopia(){
+
+}
 
 function copiarEnPortapapeles(){
     // Copia lo que que hay en el cuadro de reaultados.
+    let botonCopiar = document.getElementById("copiar");
+      // Guardar el texto original del botón
+    if (algoQueCopiar === true) {
+        // Cambiar el texto y el estilo del botón temporalmente
+        botonCopiar.innerText = "Texto Copiado!";
+        botonCopiar.style.backgroundColor = "green";
+        botonCopiar.style.color = "white";
+    }else{
+         // Cambiar el texto y el estilo del botón temporalmente
+         botonCopiar.innerText = "Nada que copiar!";
+         botonCopiar.style.backgroundColor = "red";
+         botonCopiar.style.color = "white";
+    }
+  
+      // Utilizar setTimeout para revertir los cambios después de 2 segundos (2000 milisegundos)
+      setTimeout(function() {
+          botonCopiar.innerText = "Copiar";
+          botonCopiar.style.backgroundColor = ""; // Revertir al estilo original
+          botonCopiar.style.color = "blue"; // Revertir al estilo original
+      }, 1000);
     navigator.clipboard.writeText(portapapeles);
-    alert("Texto copiado!");
+    
     return;
 }
 
