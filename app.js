@@ -61,7 +61,7 @@ function validarTexto() {
     //Si el usaurio no ingreso nada se muestra mensaje de error
     if (textIngresado === "") {
         algoQueCopiar=false;
-        mostrarResultado("error", "No ha ingresado ningun tipo de texto");
+        mostrarResultado("error", "No ha ingresado ningun tipo de texto.");
         
         //es valido? no
         return false;
@@ -75,7 +75,7 @@ function validarTexto() {
     } else if (!textoValido.test(textIngresado)) {
         //como sabemos que no es lo que queemos mostramos este mensaje
         botonCopiar=false;
-        mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas y sin acentos");
+        mostrarResultado("error", "¡Recuerda! Sólo letras minúsculas y sin acentos.");
         return false;
 
         //alert("!Recuerda¡ Sólo letras minúsculas");
@@ -130,8 +130,8 @@ function mostrarResultado(resultadoBusqueda, mensaje) {
         interruptorimagen(false);
         botonCopiar=false;
         //Se cambia el contenido de los elementos h2 y p de el cuadro de resultados
-        mostradorNoticia.innerHTML = "Ningún mensaje fue encontrado";
-        mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar";
+        mostradorNoticia.innerHTML = "¡Ningún mensaje fue encontrado!";
+        mostradorMensaje.innerHTML = "Ingresa el texto que desees encriptar o desencriptar.";
        
 
 
