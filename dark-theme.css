@@ -2,6 +2,8 @@ body{
     max-width: 1600px;
     min-width: 274px;
 }
+html,*,*::after,*::before{box-sizing: border-box;}
+
 html{
     background:#010205;
 }
