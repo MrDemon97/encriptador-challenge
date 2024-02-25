@@ -7,10 +7,7 @@ html{
 }
 
 header{
-    margin-bottom: -45px;
-    height: auto;
-    display: block;
-    width: auto     
+    margin-bottom: -45px;  
 }
 
 footer{
@@ -153,7 +150,6 @@ main{
     height: 30em;
     display: flex;
     text-align: center;
-    justify-content: center;
     flex-direction: column;
 }
 
