@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Encriptador Challenge</title>    
+    <title>Encriptador Challenge</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    
-       <!-- Esta etiqueta HTML se utiliza para incluir metadatos en el documento, que no se muestran 
+
+    <link class="etiqueta-tema" rel="stylesheet" href="style.css">
+
+        <!-- Esta etiqueta HTML se utiliza para incluir metadatos en el documento, que no se muestran 
         directamente en la página, pero proporcionan información adicional sobre el documento. -->
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 </head>
 
 <body>
     <header>
-        <img class="imagen-encabezado" src="imgs/Logo.png" alt="logo alura a">
-        <img class="imagen-encabezado" src="imgs/logo-one.png" alt="logo oracle one">
+        <div id="contenedor-logos-encabezado">
+             <img class="imagen-encabezado" src="imgs/Logo.png" alt="logo alura a">
+             <img class="imagen-encabezado" src="imgs/logo-one.png" alt="logo oracle one">
+        </div>
+        <button id="botonCambiarTema" onclick="cambiarTema()"><img id="icon-tema" src="imgs/icons/luna.png"></button>
     </header>
     <main>
         <section class="zona-analizador">
             <div id="contenedor-entrada">
                 <textarea class="texto-a-analizar" cols="" rows="" required="Ingresa un texto por favor" placeholder="Ingrese el texto aquí"></textarea>
-                <p class="instrucciones"><img src="imgs/admiracion.png" id="admiracion"> Ingresa sólo letras minusculas sin acento.</p>
+                <p class="instrucciones"><img src="imgs/admiracion.png" id="admiracion"> Ingresa sólo letras minúsculas sin acento.</p>
             </div>
             <div class="zona-botones">
                 <button onclick="sistemaEncriptador(1)" class="boton-tipo1">Encriptar</button>
@@ -32,6 +40,7 @@
         <section class="zona-mensajes">
             
                 <img class="logo-lupa"src="imgs/Muneco.png" alt="Persona con lupa en la mano">
+                <!-- <img class="logo-lupa" src="imgs/temas/cat-theme/logo-lupa-samurai.png" alt="gatosamurailogolupa"> -->
                 <h2 class="noticia">¡Ningún mensaje fue encontrado!</h2>
                 <p class="mensaje-optenido">Ingresa el texto que desees encriptar o desencriptar.</p>
                 <button onclick="copiarEnPortapapeles()"  class= "boton-tipo2" id="copiar">Copiar</button>
