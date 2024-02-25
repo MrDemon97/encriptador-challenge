@@ -1,6 +1,8 @@
 let textIngresado = "";
 let portapapeles = "";
 let algoQueCopiar;
+let temaActual=1;
+//-----------------------------------------------------------------------------
 
 /* creamos una constante en la cual almacenamos una expresión regular 
 NOTA : / Delimita el inicio y final de la expresión
@@ -23,6 +25,31 @@ algoQueCopiar=false; //deshabilitamos boton copiar
 
 /* Al hacer click en uno de los dos botones para encriptar o desencriptar se ejecuta esta función
 recibe como parametro la eleccion del usuario */
+
+
+function cambiarTema(){
+    let etiquetaTema=document.getElementsByClassName("etiqueta-tema")[0];
+    let imagenLupa=document.getElementsByClassName("logo-lupa")[0];
+    let iconoTema=document.getElementById("icon-tema");
+
+    if (temaActual === 1) {
+        temaActual = 2;
+        etiquetaTema.href="dark-theme.css";
+        imagenLupa.src="imgs/Muneco.png";
+        iconoTema.src="imgs/icons/samurai.png";
+    } else if (temaActual === 2) {
+        temaActual = 3;
+        imagenLupa.src="imgs/temas/cat-theme/logo-lupa-samurai.png";
+        etiquetaTema.href="cat-theme.css";
+        iconoTema.src="imgs/icons/sol.png";
+    } else if (temaActual === 3) {
+        temaActual = 1;
+        imagenLupa.src="imgs/Muneco.png";
+        etiquetaTema.href="style.css";
+        iconoTema.src="imgs/icons/luna.png";
+    }
+}
+
 function sistemaEncriptador(opcion) {
   
     textIngresado = document.querySelector(".texto-a-analizar").value;
@@ -203,7 +230,7 @@ function copiarEnPortapapeles(){
       setTimeout(function() {
           botonCopiar.innerText = "Copiar";
           botonCopiar.style.backgroundColor = ""; // Revertir al estilo original
-          botonCopiar.style.color = "blue"; // Revertir al estilo original
+          botonCopiar.style.color = ""; // Revertir al estilo original
       }, 1000);
     navigator.clipboard.writeText(portapapeles);
     
